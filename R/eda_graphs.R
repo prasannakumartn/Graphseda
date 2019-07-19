@@ -27,7 +27,7 @@ eda_graphs <- function(data,variables=c(1:ncol(data)),filepath=getwd())
       slices <- c(counts)
       lbls <- c(counts)
 
-      print(paste(names(data)[i],'is categorical'))
+      print(paste(names(data)[i],'is categorical & graphs exported'))
       png(paste(names(data)[i], ".png", sep=""))
       par(mfrow = c(1,2))
 
@@ -37,7 +37,7 @@ eda_graphs <- function(data,variables=c(1:ncol(data)),filepath=getwd())
     }
     else if(is.numeric(data[,i])) #for numeric variables.
     {
-      print(paste(names(data)[i],'is numerical'))
+      print(paste(names(data)[i],'is numerical & graphs exported'))
       png(paste(names(data)[i],".png",sep=""))
       par(mfrow=c(4,1))
       boxplot(data[,i], main = paste("Boxplot of",names(data)[i]),col="green",
